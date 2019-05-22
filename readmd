@@ -1,0 +1,12 @@
+if [[ $1 == "" ]]; then
+	echo "Please enter a file!"
+	exit 0
+fi
+if hash pandoc 2>/dev/null; then
+	echo "Please install pandoc"
+fi
+if hash lynx 2>/dev/null; then
+	echo "Please install lynx"
+fi
+
+pandoc "$1" | lynx -stdin
